@@ -1,7 +1,7 @@
-const AuthAPI = () => {
+const LoginAPI = () => {
     return (
         <div>AuthAPI</div>
     )
 }
 
-export default AuthAPI
+export default LoginAPI

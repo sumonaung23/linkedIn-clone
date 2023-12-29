@@ -1,10 +1,14 @@
 import LoginAPI from "../api/AuthAPI"
+import '../Sass/LoginComponent.scss'
 
 const LoginComponent = () => {
+    const login = () => {
+        LoginAPI();
+    }
     return (
         <div>
             <h1>Login Component</h1>
-            <button className="login-btn">Login To LinkedIn</button>
+            <button onClick={login} className="login-btn">Login To LinkedIn</button>
             <LoginAPI />
         </div>
     )

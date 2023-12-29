@@ -1,6 +1,8 @@
 const LoginAPI = () => {
     return (
-        <div>AuthAPI</div>
+        <div>
+            <h1>AuthAPI</h1>
+        </div>
     )
 }
 

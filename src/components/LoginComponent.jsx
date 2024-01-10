@@ -1,16 +1,35 @@
+import { useState } from "react"
 import LoginAPI from "../api/AuthAPI"
 import '../Sass/LoginComponent.scss'
 
 const LoginComponent = () => {
+    const [credentials, setCredentials] = useState({});
     const login = () => {
-        LoginAPI();
-    }
+        LoginAPI(credentials.email, credentials.password)
+    };
+
     return (
-        <div>
+        <div className="login-wrapper">
             <h1>Login Component</h1>
-            <input className="common-input" placeholder="Enter your Email" />
-            <button onClick={login} className="login-btn">Login To LinkedIn</button>
-            <LoginAPI />
+            <div className="auth-inputs">
+                <input 
+                    onChange={(e) => 
+                    setCredentials({ ...credentials, email: e.target.value})
+                    } 
+                    className="common-input"
+                    placeholder="Enter your Email" 
+                />
+                <input 
+                    onChange={(e) => 
+                        setCredentials({ ...credentials, password: e.target.value})
+                    }
+                    className="common-input"
+                    placeholder="Enter your Password"
+                />
+            </div>
+            <button onClick={login} className="login-btn" >
+                Log in to LinkedIn
+            </button>
         </div>
     )
 }

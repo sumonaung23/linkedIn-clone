@@ -3,9 +3,10 @@ import { auth } from '../firebaseConfig';
 
 const LoginAPI = (email, password) => {
     try {
-        signInWithEmailAndPassword(auth, email, password);
+        let response = signInWithEmailAndPassword(auth, email, password);
+        return response;
     } catch(err) {
-        return err
+        alert(err.errors.message);
     }
 }
 

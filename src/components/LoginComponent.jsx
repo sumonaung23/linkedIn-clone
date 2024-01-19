@@ -5,7 +5,13 @@ import '../Sass/LoginComponent.scss'
 const LoginComponent = () => {
     const [credentials, setCredentials] = useState({});
     const login = () => {
-        LoginAPI(credentials.email, credentials.password)
+        try {
+            let res = LoginAPI(credentials.email, credentials.password);
+            console.log(res.code);
+        }
+        catch (err) {
+            console.log(err.code)
+        }
     };
 
     return (

@@ -1,6 +1,69 @@
-.login-btn {
-    width: 150px;
-    height: 30px;
+body {
+    margin: 0;
+    padding: 1rem;
+}
+
+.login-wrapper {
+    border: 1px solid red;
+    background-color: white;
+    
+    .heading {
+        margin-left: 300px;
+        font-family: system-ui;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    .sub-heading {
+        margin-left: 300px;
+        margin-top: -20px;
+        font-family: system-ui;
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+.auth-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    margin-left: 300px;
     cursor: pointer;
-    background-color: #00bfff;
+
+    .common-input {
+        height: 20px;
+        padding: 10px;
+        background-color: white;
+        outline: none;
+        border: 1px solid #212121;
+        color: #212121;
+        font-family: system-ui;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+
+    .common-input:focus {
+        outline: 1px solid rgb(1, 1, 117);
+    }
+
+    ::placeholder {
+        font-family: system-ui;
+        font-size: 16px;
+    }
+}
+
+.login-btn {
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #0d79cb;
+    margin-top: 1rem;
+    margin-left: 300px;
+    border-radius: 30px;
+    border: none;
+}
+
+.linkedinLogo {
+    width: 50px;
 }

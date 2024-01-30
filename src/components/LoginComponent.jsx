@@ -16,31 +16,34 @@ const LoginComponent = () => {
     };
 
     return (
-        <div className="login-wrapper">
+        <div className="login_wrapper">
             <img src={LinkedInLogo} alt="LinkedInLogo" className="linkedinLogo" />
 
-            <h1 className="heading">Sign in</h1>
-            <p className="sub-heading">Stay updated on your professional world</p>
+            <div className="login_wrapper-inner">
+                <h1 className="heading">Sign in</h1>
+                <p className="sub-heading">Stay updated on your professional world</p>
 
-            <div className="auth-inputs">
-                <input 
-                    onChange={(e) => 
-                    setCredentials({ ...credentials, email: e.target.value})
-                    } 
-                    className="common-input"
-                    placeholder="Email or Phone" 
-                />
-                <input 
-                    onChange={(e) => 
-                        setCredentials({ ...credentials, password: e.target.value})
-                    }
-                    className="common-input"
-                    placeholder="Enter your Password"
-                />
+                <div className="auth-inputs">
+                    <input 
+                        onChange={(e) => 
+                        setCredentials({ ...credentials, email: e.target.value})
+                        } 
+                        className="common-input"
+                        placeholder="Email or Phone" 
+                    />
+                    <input 
+                        onChange={(e) => 
+                            setCredentials({ ...credentials, password: e.target.value})
+                        }
+                        className="common-input"
+                        placeholder="Enter your Password"
+                    />
+                </div>
+                <button onClick={login} className="login-btn" >
+                    Sign in
+                </button>
             </div>
-            <button onClick={login} className="login-btn" >
-                Log in to LinkedIn
-            </button>
+            <hr class='hr-text' data-content="OR" />
         </div>
     )
 }

@@ -8,12 +8,11 @@ body {
 }
 
 .login_wrapper {
-    border: 1px solid red;
-    background-color: white;
+    background-color: white !important;
+    height: 100vh;
 
     .login_wrapper-inner {
         margin-left: 200px;
-        border: 1px solid green;
     }
     
     .heading {
@@ -113,6 +112,26 @@ body {
         line-height: 1.5em;
       // this is really the only tricky part, you need to specify the background color of the container element...
         color: #818078;
-        background-color: #9a9a98;
+        background-color: #fcfcfa;
+    }
+}
+
+.googleBtn-container {
+    margin-left: 200px;
+
+    .google-btn {
+        width: 300px !important;
+    }
+
+    .signup {
+        margin-left: 50px;
+        font-size: 16px;
+    }
+
+    .join-now {
+        color: $linkedinBlue1;
+        font-family: system-ui;
+        cursor: pointer;
+        font-size: 18px;
     }
 }

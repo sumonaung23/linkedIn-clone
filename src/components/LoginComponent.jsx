@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { LoginAPI } from "../api/AuthAPI"
 import LinkedInLogo from '../assets/linkedInLogo.png';
+import GoogleButton from 'react-google-button'
 import '../Sass/LoginComponent.scss'
 
 const LoginComponent = () => {
@@ -44,6 +45,16 @@ const LoginComponent = () => {
                 </button>
             </div>
             <hr class='hr-text' data-content="OR" />
+            <div className="googleBtn-container">
+                <GoogleButton
+                    className="google-btn"
+                    onClick={() => { console.log('Google button clicked') }}
+                />
+
+                <p className="signup">
+                    New to LinkedIn? <span className="join-now">Join now</span>
+                </p>
+            </div>
         </div>
     )
 }

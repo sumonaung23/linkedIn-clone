@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { LoginAPI } from "../api/AuthAPI"
+import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI"
 import LinkedInLogo from '../assets/linkedInLogo.png';
 import GoogleButton from 'react-google-button'
 import '../Sass/LoginComponent.scss'
@@ -16,6 +16,11 @@ const LoginComponent = () => {
             toast.error('Please check your credentials!');
         }
     };
+
+    const googleSignIn = () => {
+        let response = GoogleSignInAPI();
+        console.log(response);
+    }
 
     return (
         <div className="login_wrapper">
@@ -49,7 +54,7 @@ const LoginComponent = () => {
             <div className="googleBtn-container">
                 <GoogleButton
                     className="google-btn"
-                    onClick={() => { console.log('Google button clicked') }}
+                    onClick={googleSignIn}
                 />
 
                 <p className="signup">

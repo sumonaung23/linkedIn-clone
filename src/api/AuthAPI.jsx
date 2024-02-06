@@ -23,10 +23,20 @@ export const RegisterAPI = (email, password) => {
     }
 }
 
-export const GoogleSignInAPI = (email, password) => {
+/* export const GoogleSignInAPI = () => {
     try {
         let googleProvider = new GoogleAuthProvider();
         let res = signInWithPopup(googleProvider);
+        return res;
+    } catch(err) {
+        return err;
+    }
+} */
+
+export const GoogleSignInAPI = async () => {
+    try {
+        let googleProvider = new GoogleAuthProvider();
+        let res = await signInWithPopup(auth, googleProvider);
         return res;
     } catch(err) {
         return err;

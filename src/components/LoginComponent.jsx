@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI"
 import LinkedInLogo from '../assets/linkedInLogo.png';
-import GoogleButton from 'react-google-button'
+import GoogleButton from 'react-google-button';
+import { navigate } from "../helpers/useNavigate";
+
 import '../Sass/LoginComponent.scss'
 import { toast } from "react-toastify";
 
@@ -17,10 +19,21 @@ const LoginComponent = () => {
         }
     };
 
-    const googleSignIn = () => {
+    /* const googleSignIn = () => {
         let response = GoogleSignInAPI();
         console.log(response);
+    } */
+
+    const googleSignIn = async () => {
+        try {
+            let response = await GoogleSignInAPI();
+            console.log(response);
+        } catch (err) {
+            console.error("Error signing in with Google:", err);
+            // Handle the error appropriately, e.g., show an error message to the user.
+        }
     }
+    
 
     return (
         <div className="login_wrapper">
@@ -50,7 +63,9 @@ const LoginComponent = () => {
                     Sign in
                 </button>
             </div>
-            <hr class='hr-text' data-content="OR" />
+            {/* <hr class='hr-text' data-content="OR" /> */}
+            <hr className='hr-text' data-content="OR" />
+
             <div className="googleBtn-container">
                 <GoogleButton
                     className="google-btn"
@@ -58,7 +73,7 @@ const LoginComponent = () => {
                 />
 
                 <p className="signup">
-                    New to LinkedIn? <span className="join-now">Join now</span>
+                    New to LinkedIn? <span className="join-now" onClick={() => navigate('/register')}>Join now</span>
                 </p>
             </div>
         </div>

@@ -2,12 +2,13 @@ import { useState } from "react"
 import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI"
 import LinkedInLogo from '../assets/linkedInLogo.png';
 import GoogleButton from 'react-google-button';
-import { navigate } from "../helpers/useNavigate";
+import { useNavigate } from "react-router-dom";
 
 import '../Sass/LoginComponent.scss'
 import { toast } from "react-toastify";
 
 const LoginComponent = () => {
+    const navigate = useNavigate();
     const [credentials, setCredentials] = useState({});
     const login = async () => {
         try {

@@ -14,6 +14,7 @@ const LoginComponent = () => {
         try {
             let res = await LoginAPI(credentials.email, credentials.password);
             toast.success('Signed In to LinkedIn!');
+            navigate('/home')
         }
         catch (err) {
             toast.error('Please check your credentials!');
@@ -28,7 +29,7 @@ const LoginComponent = () => {
     const googleSignIn = async () => {
         try {
             let response = await GoogleSignInAPI();
-            console.log(response);
+            navigate('/home')
         } catch (err) {
             console.error("Error signing in with Google:", err);
             // Handle the error appropriately, e.g., show an error message to the user.

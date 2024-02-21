@@ -14,6 +14,7 @@ const RegisterComponent = () => {
         try {
             let res = await RegisterAPI(credentials.email, credentials.password);
             toast.success('Account Created!');
+            navigate('/home')
         }
         catch (err) {
             toast.error('Cannot create your account!');
@@ -23,7 +24,7 @@ const RegisterComponent = () => {
     const googleSignIn = async () => {
         try {
             let response = await GoogleSignInAPI();
-            console.log(response);
+            navigate('/home')
         } catch (err) {
             console.error("Error signing in with Google:", err);
             // Handle the error appropriately, e.g., show an error message to the user.
